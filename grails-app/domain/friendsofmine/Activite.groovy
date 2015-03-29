@@ -3,16 +3,16 @@ package friendsofmine
 
 
 class Activite {
+    ActiviteService activiteService
     String titre;
     String descriptif;
+    Utilisateur responsable;
 
-    Activite(String titre, String descriptif) {
-        this.titre = titre;
-        this.descriptif = descriptif;
-    }
     static constraints = {
         titre blank: false, nullable: false
         descriptif nullable: true
 
     }
+
+    static belongsTo = [responsable: Utilisateur]
 }
