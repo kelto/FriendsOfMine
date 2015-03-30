@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class ActiviteController {
 
-    ActiviteService activiteService
+    def activiteService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -37,7 +37,6 @@ class ActiviteController {
         }
 
         //activiteInstance.save flush: true
-        print(activiteInstance.responsable)
         activiteService.insertOrUpdateActiviteForResponsable(activiteInstance, activiteInstance.responsable)
 
         request.withFormat {

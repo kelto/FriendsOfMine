@@ -12,6 +12,7 @@ class ActiviteService {
     Activite insertOrUpdateActiviteForResponsable(Activite activite, Utilisateur utilisateur) {
         utilisateur.addToActivites(activite);
         utilisateur.save();
+        activite.save();
         return activite;
     }
 

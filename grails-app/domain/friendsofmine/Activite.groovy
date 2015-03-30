@@ -3,7 +3,6 @@ package friendsofmine
 
 
 class Activite {
-    ActiviteService activiteService
     String titre;
     String descriptif;
     Utilisateur responsable;
